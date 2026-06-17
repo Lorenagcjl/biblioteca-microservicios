@@ -18,7 +18,7 @@ services:
   svc-catalogo:
     build: ./svc-catalogo
     ports:
-      - "8084:8084"
+      - "8091:8091"
     environment:
       - REDIS_HOST=redis-cache
       - DB_HOST=postgres
@@ -34,7 +34,7 @@ services:
   svc-prestamos:
     build: ./svc-prestamos
     ports:
-      - "8085:8085"
+      - "8092:8092"
     environment:
       - REDIST_HOST=redis-cache
       - DB_HOST=postgres
@@ -50,7 +50,7 @@ services:
   svc-miembros:
     build: ./svc-miembros
     ports:
-      - "8086:8086"
+      - "8093:8093"
     environment:
       - REDIS_HOST=redis-cache
       - DB_HOST=postgres
