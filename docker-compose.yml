@@ -36,7 +36,7 @@ services:
     ports:
       - "8092:8092"
     environment:
-      - REDIST_HOST=redis-cache
+      - REDIS_HOST=redis-cache
       - DB_HOST=postgres
       - DB_USER=postgres
       - DB_PASS=12345
@@ -80,6 +80,14 @@ services:
       POSTGRES_PASSWORD: 12345
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - microservices-net
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8081:8080"
     networks:
       - microservices-net
 
